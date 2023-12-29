@@ -151,16 +151,15 @@ void rr_rotation(node* pivot){
     std::cout<<"rr_rotation was ran to fix for "<<pivot->data<<std::endl;
 }
 void rl_rotation(node* pivot){
-    node* secondPivot = pivot->leftChild;
-    rr_rotation(secondPivot);
-    ll_rotation(pivot);
-
-    std::cout<<"rl_rotation was ran to fix for "<<pivot->data<<std::endl;
-}
-void lr_rotation(node* pivot){
     node* secondPivot = pivot->rightChild;
     ll_rotation(secondPivot);
     rr_rotation(pivot);
+    std::cout<<"rl_rotation was ran to fix for "<<pivot->data<<std::endl;
+}
+void lr_rotation(node* pivot){
+    node* secondPivot = pivot->leftChild;
+    rr_rotation(secondPivot);
+    ll_rotation(pivot);
     std::cout<<"lr_rotation was ran to fix for "<<pivot->data<<std::endl;
 }
 
